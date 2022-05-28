@@ -6,6 +6,8 @@ ASMBoBo一款简易的汇编与机器码的简易编辑器(融合了如字符串
 汇编引擎使用了Keystone:  
 https://www.keystone-engine.org/  
 https://github.com/keystone-engine/keystone/tree/master/bindings/csharp  
+结合了自己之前的命令行项目:  
+https://github.com/Jhinxs/shellcode_gen
 
 PS:汇编的语法风格以MASM为准
 
