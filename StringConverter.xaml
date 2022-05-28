@@ -1,0 +1,109 @@
+﻿<Window x:Class="AsmBoBo.StringConverter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsmBoBo"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+ 
+        mc:Ignorable="d"
+        Title="StringConverter" Height="450" Width="800" Closed="Window_Closed" WindowStyle="ToolWindow">
+    <Grid x:Name="StringConverterMainGrid" Height="auto" Width="auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="ConverterMode" Background="#223145">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="mode1" Width="10*"></ColumnDefinition>
+                <ColumnDefinition x:Name="mode2" Width="10*"></ColumnDefinition>
+                <ColumnDefinition x:Name="other" Width="80*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0">
+                <CheckBox x:Name="CheckBoxmode1" IsChecked="False" Foreground="FloralWhite" Content="mode1" Checked="mode1_check">
+                    <CheckBox.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </CheckBox.Resources>
+                </CheckBox>
+            </Border>
+            <Border Grid.Column="1">
+                <CheckBox x:Name="CheckBoxmode2" IsChecked="False" Foreground="FloralWhite" Content="mode2" Click="mode2_check">
+                    <CheckBox.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </CheckBox.Resources>
+                </CheckBox>
+            </Border>
+
+        </Grid>
+        <Grid Grid.Row="1" x:Name="editor" Background="#282A36" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="string" Width="50*"></ColumnDefinition>
+                <ColumnDefinition x:Name="stringasm" Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <RichTextBox Grid.Column="0" x:Name="string_editor"
+                        Foreground="#F8F8F2"                        
+                        VerticalScrollBarVisibility="Auto"
+                        BorderThickness="1"
+                        FontFamily="Cascadia Code"
+                        FontStyle="Normal" 
+                        FontWeight="Normal"
+                        HorizontalScrollBarVisibility="Auto"
+                        Padding="15,10"
+                        FontSize="15" >
+                <RichTextBox.Document>
+
+                    <FlowDocument LineHeight="1">
+                    </FlowDocument>
+                </RichTextBox.Document>
+            </RichTextBox>
+            <TextBox Grid.Column="1" 
+                         x:Name="stringasm_editor" 
+                         Foreground="#F8F8F2"
+                         VerticalScrollBarVisibility="Auto"
+                         BorderThickness="1"
+                         FontFamily="Cascadia Code"
+                         FontStyle="Normal" 
+                         FontWeight="Normal"
+                         HorizontalScrollBarVisibility="Auto"
+                         Padding="15,10"
+                         FontSize="15">
+
+            </TextBox>
+        </Grid>
+        <Grid Grid.Row="2" Background="#223145" x:Name="footer">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="footer_other" Width="60*"></ColumnDefinition>
+                <ColumnDefinition x:Name="Transform" Width="10*"></ColumnDefinition>
+                <ColumnDefinition x:Name="Arch" Width="10*"></ColumnDefinition>
+                <ColumnDefinition x:Name="converter" Width="10*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="Transform_combobox" Grid.Column="1" Foreground="AntiqueWhite"
+                  materialDesign:HintAssist.Hint="Transform">
+                <ComboBoxItem Content="ToAsm" Selected="StrToAsm_Selected"/>
+                <ComboBoxItem Content="ToCstr" Selected="StrToCstr_Selected"/>
+                <ComboBoxItem Content="ToBase64" Selected="StrToBase64_Selected"/>
+            </ComboBox>
+            <ComboBox x:Name="Arch_combobox" Grid.Column="2" Foreground="AntiqueWhite"
+                  materialDesign:HintAssist.Hint="Arch">
+                <ComboBoxItem Content="x86" />
+                <ComboBoxItem Content="x64" />
+            </ComboBox>
+            <Button x:Name="converter_button" Grid.Column="3" Foreground="White"
+                     Content="{materialDesign:PackIcon AirplaneTakeoff}"
+                     ToolTip="Icon"
+                     Click="converter_button_Click"
+                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" >
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
