@@ -9,6 +9,6 @@ https://github.com/keystone-engine/keystone/tree/master/bindings/csharp
 
 PS:汇编的语法风格以MASM为准
 
-<img src="png/asm.png" width="60%" height="60%">
-<img src="png/bin.png" width="60%" height="60%">
-<img src="png/cpp.png" width="60%" height="60%">
+<img src="png/asm.PNG" width="60%" height="60%">
+<img src="png/bin.PNG" width="60%" height="60%">
+<img src="png/cpp.PNG" width="60%" height="60%">
