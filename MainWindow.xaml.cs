@@ -30,6 +30,7 @@ namespace AsmBoBo
         public static string AsmCache = string.Empty;
         public static string CppCodeCache = string.Empty;
         public static List<StringConverter> StringConverterWindowList = new List<StringConverter>();
+        public static List<shellcode_enc> shellcode_enc_WindowList = new List<shellcode_enc>();
         public MainWindow()
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -40,25 +41,6 @@ namespace AsmBoBo
             AsmCache = string.Empty;
             CppCodeCache = string.Empty;
     }
-        private void Converter_String_click(object sender, RoutedEventArgs e)
-        {
-            StringConverter StringConverterWindow = new StringConverter();
-            if (StringConverterWindowList.Count != 0)
-            {
-                foreach (var a in StringConverterWindowList)
-                {
-                    a.Activate();
-                }
-            }
-            else
-            {
-                StringConverterWindow.Show();
-                StringConverterWindowList.Add(StringConverterWindow);
-            }
-
-
-
-        }
         private void converter_button_Click(object sender, RoutedEventArgs e)
         {
             string source_code_editor_text = new TextRange(source_code_editor.Document.ContentStart,
@@ -334,18 +316,40 @@ namespace AsmBoBo
             return formattingcode;
 
         }
-
-        private void source_code_editor_TextChanged(object sender, TextChangedEventArgs e)
+        private void Converter_String_click(object sender, RoutedEventArgs e)
         {
-            //string source_code_editor_text = new TextRange(source_code_editor.Document.ContentStart, source_code_editor.Document.ContentEnd).Text;
-            //if (Mode_combobox.SelectedIndex == 0)
-            //{
-            //    AsmCache = source_code_editor_text;
-            //}
-            //else if (Mode_combobox.SelectedIndex == 1) 
-            //{
-            //    CppCodeCache = source_code_editor_text;
-            //}
+            StringConverter StringConverterWindow = new StringConverter();
+            if (StringConverterWindowList.Count != 0)
+            {
+                foreach (var a in StringConverterWindowList)
+                {
+                    a.Activate();
+                }
+            }
+            else
+            {
+                StringConverterWindow.Show();
+                StringConverterWindowList.Add(StringConverterWindow);
+            }
+
+
+
+        }
+        private void Shellcode_Enc_Click(object sender, RoutedEventArgs e)
+        {
+            shellcode_enc shellcode_window = new shellcode_enc();
+            if (shellcode_enc_WindowList.Count != 0)
+            {
+                foreach (var a in shellcode_enc_WindowList)
+                {
+                    a.Activate();
+                }
+            }
+            else
+            {
+                shellcode_window.Show();
+                shellcode_enc_WindowList.Add(shellcode_window);
+            }
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AsmBoBo"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         mc:Ignorable="d"
-        Title="AsmBoBo" Height="850" Width="1450" Background="#181735" WindowStyle="ToolWindow">
+        Title="AsmBoBo" Height="850" Width="1450" Background="#181735" WindowStyle="SingleBorderWindow">
     <Grid x:Name="maingrid" Height="auto" Width="auto">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"></RowDefinition>
@@ -23,7 +23,7 @@
             <Menu Grid.Column="1" Foreground="White" Height="auto" Width="auto" materialDesign:MenuAssist.TopLevelMenuItemHeight="25">
                 <MenuItem Header="Tools">
                     <MenuItem Header="string" Click="Converter_String_click"/>
-                    <MenuItem Header="Item 2" />
+                    <MenuItem Header="shellcode" Click="Shellcode_Enc_Click" />
                 </MenuItem>
             </Menu>
         </Grid>
@@ -47,7 +47,6 @@
                         HorizontalScrollBarVisibility="Auto"
                         Padding="15,10"
                         FontSize="15"
-                        TextChanged="source_code_editor_TextChanged"
                         PreviewMouseRightButtonDown="source_code_editor_PreviewMouseRightButtonDown">
                 
                 <RichTextBox.Document>

