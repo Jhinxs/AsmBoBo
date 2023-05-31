@@ -22,8 +22,8 @@ namespace AsmBoBo
     /// </summary>
     public partial class shellcode_enc : Window
     {
-        public static byte key1 = 0x2b;
-        public static byte key2 = 0x66;
+        public static byte key1 = 0x3c;
+        public static byte key2 = 0x2e;
         public static Boolean x86 = false;
         public static Boolean FileMode = false;
         public static string SMC_ShellCode_Header;

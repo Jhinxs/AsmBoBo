@@ -14,3 +14,5 @@ PS:汇编的语法风格以MASM为准
 <img src="png/asm.PNG" width="60%" height="60%">
 <img src="png/bin.PNG" width="60%" height="60%">
 <img src="png/cpp.PNG" width="60%" height="60%">
+
+PS:半成品不想搞了，主要是完全用汇编实现通用堆栈管理，各种api地址获取，应对各种复杂的api调用太烦了。有需要还是自己写shellcode或者同text代码段抠opcode吧

@@ -77,6 +77,9 @@
       <DependentUpon>StringConverter.xaml</DependentUpon>
     </Compile>
     <Compile Include="template.cs" />
+    <Compile Include="x64\ASMDynamicGen.cs" />
+    <Compile Include="x64\ASMString.cs" />
+    <Compile Include="x64\x64main.cs" />
     <Compile Include="x86\ASMDynamicGen.cs" />
     <Compile Include="x86\ASMString.cs" />
     <Compile Include="x86\x86main.cs" />

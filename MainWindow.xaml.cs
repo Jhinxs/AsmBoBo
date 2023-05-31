@@ -61,6 +61,8 @@ namespace AsmBoBo
                 }
                 if (Arch_combobox.Text == "x64")
                 {
+                    string asmcode = x64.x64main.ParseSimulationCode(formattingcode);
+                    op_code_editor.Text = asmcode;
                 }
                 NoErrorWhenAssembly = true;
             } 
@@ -234,7 +236,7 @@ namespace AsmBoBo
                 }
                 else
                 {
-                    string templatecode = template.cppcode;
+                    string templatecode = x86template.cppcode;
                     source_code_editor.Document.Blocks.Clear();
                     source_code_editor.AppendText(templatecode);
                     SwitchToMode1++;
@@ -263,7 +265,7 @@ namespace AsmBoBo
                 }
                 else
                 {
-                    string templatecode = template.AsmCode;
+                    string templatecode = x86template.AsmCode;
                     source_code_editor.Document.Blocks.Clear();
                     source_code_editor.AppendText(templatecode);
                     SwitchToMode2++;

